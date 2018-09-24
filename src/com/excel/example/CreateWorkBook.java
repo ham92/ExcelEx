@@ -107,8 +107,8 @@ public class CreateWorkBook {
 		
 			
 			spreadsheet.autoSizeColumn(1);
-
-		
+			spreadsheet.autoSizeColumn(2);
+			spreadsheet.autoSizeColumn(3);
 
 		
 		
