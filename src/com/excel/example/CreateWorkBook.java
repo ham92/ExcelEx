@@ -104,6 +104,14 @@ public class CreateWorkBook {
 			}
 
 		}
+		
+			
+			spreadsheet.autoSizeColumn(1);
+
+		
+
+		
+		
 		// write operation workbook using file out object
 		workbook.write(out);
 		out.close();
