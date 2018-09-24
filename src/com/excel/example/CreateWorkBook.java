@@ -21,7 +21,7 @@ public class CreateWorkBook {
 
 	public static void main(String[] args) throws IOException {
 
-		// createXclFile();
+		 createXclFile();
 		readFromXclFile();
 
 	}
@@ -64,9 +64,10 @@ public class CreateWorkBook {
 		XSSFWorkbook workbook = new XSSFWorkbook();
 
 		// Create a blank spreadsheet
-		XSSFSheet spreadsheet = workbook.createSheet("Employee Info");
+		XSSFSheet spreadsheet = workbook.createSheet("Employee Info") ;
+		//spreadsheet.lockAutoFilter();
 		XSSFRow row = spreadsheet.createRow(1);
-
+		
 		// Create file system using specific name
 		FileOutputStream out = null;
 
@@ -91,12 +92,15 @@ public class CreateWorkBook {
 
 		for (String key : keyid) {
 			row = spreadsheet.createRow(rowid++);
+			 row.setHeight((short) 400);
 			Object[] objectArr = empInfo.get(key);
 			int cellid = 0;
 
 			for (Object obj : objectArr) {
 				Cell cell = row.createCell(cellid++);
 				cell.setCellValue((String) obj);
+			      cell.setCellStyle(style2);
+			//      cell.getCellStyle().setDataFormat(1);
 			}
 
 		}
